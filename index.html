@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tobi david obembe — builder, founder</title>
+<meta name="description" content="builder and founder in abuja, running an agent fleet. every claim on this page links to something you can check.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#16171a; --surface:#1d1f23; --line:#2d3035; --text:#dcd9cf; --muted:#8b8f96;
+  --live:#6fbf73; --sub:#d9a441; --park:#7b7f85;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--text);font:1.125rem/1.65 var(--serif);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--muted);text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--text)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--live);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.01em}
+.muted{color:var(--muted)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(22,23,26,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:1.5rem;align-items:center;height:3.25rem;overflow-x:auto;white-space:nowrap}
+nav a{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--text)}
+nav a.me{color:var(--text);margin-right:auto;font-weight:500}
+
+/* notebook margin: a ruled line down the left of the content */
+main{border-left:1px solid var(--line);margin-left:max(1.5rem,calc((100vw - 62rem)/2 + 1.5rem))}
+section{padding:4.5rem 0 1rem 2.5rem;max-width:57rem;position:relative}
+section::before{content:attr(data-entry);position:absolute;left:-1px;top:4.9rem;transform:translateX(-100%);padding-right:.9rem;font:.72rem var(--mono);color:var(--muted);display:none}
+h2{font:500 .95rem var(--mono);margin:0 0 2rem;color:var(--muted)}
+h2::before{content:"";display:inline-block;width:.6rem;height:.6rem;border:1px solid var(--muted);border-radius:50%;margin:0 .8rem 0 -2.5rem;background:var(--bg);transform:translateX(calc(-.3rem + 1px));vertical-align:middle}
+
+/* hero */
+.hero{padding-top:5rem}
+.status{font:.82rem var(--mono);color:var(--live);display:flex;gap:.6rem;align-items:center;min-height:1.6rem}
+.status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--live);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+h1{font:500 clamp(2.2rem,6vw,3.6rem)/1.1 var(--serif);letter-spacing:-.02em;margin:1.6rem 0 .8rem}
+.pos{font:1rem var(--mono);color:var(--muted);margin:0 0 3rem}
+.num{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.6rem 0}
+.num strong{font:700 clamp(2.4rem,8vw,4.6rem)/1 var(--mono);letter-spacing:-.04em;white-space:nowrap}
+.num strong span{color:var(--live)}
+.num p{margin:0;max-width:22rem;color:var(--muted);font-size:1rem;line-height:1.5}
+.links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:1.6rem;font:.85rem var(--mono)}
+
+/* check these first */
+.first{margin-top:2rem;border:1px solid var(--line);background:var(--surface);padding:1.2rem 1.4rem}
+.first h2{margin:0 0 .6rem}
+.first h2::before{display:none}
+.first ul{list-style:none;margin:0;padding:0}
+.first li{display:grid;grid-template-columns:9rem 1fr auto;gap:1rem;align-items:baseline;padding:.65rem 0;border-top:1px solid var(--line)}
+.first li b{font:500 .9rem var(--mono)}
+.first li span{font-size:1rem;color:var(--muted)}
+.first li a{font:.85rem var(--mono)}
+@media(max-width:640px){.first li{grid-template-columns:1fr auto}.first li span{grid-column:1/-1;order:3}}
+
+/* proof */
+.proof p{max-width:38rem}
+table{width:100%;border-collapse:collapse;font:.85rem var(--mono);margin:1.6rem 0}
+th,td{text-align:left;padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--line);font-weight:400}
+th{color:var(--muted)}
+td:last-child,th:last-child{text-align:right;padding-right:0}
+.tw{overflow-x:auto}
+
+/* badges */
+.b{display:inline-flex;align-items:center;gap:.4rem;font:.72rem var(--mono);color:var(--c);border:1px solid var(--c);border-radius:99px;padding:.1rem .6rem}
+.b::before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--c)}
+.live{--c:var(--live)}.sub{--c:var(--sub)}.park{--c:var(--park)}.demo{--c:#7aa7d9}.oss{--c:#b79be0}
+
+/* builds */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;transition:background .15s}
+.card:hover{background:var(--surface)}
+.card h3{font:500 1rem var(--mono);margin:0}
+.card p{margin:0;font-size:1rem;line-height:1.5;color:var(--muted);flex:1}
+.card .k{font:.8rem var(--mono)}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.card .l{font:.78rem var(--mono);display:flex;gap:1rem}
+.biz{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.biz li{display:grid;grid-template-columns:9rem 1fr auto;gap:1rem;align-items:baseline;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.biz b{font:500 .9rem var(--mono)}
+.biz span{color:var(--muted);font-size:1rem}
+.sub-h{font:.8rem var(--mono);color:var(--muted);margin:2.6rem 0 .8rem}
+
+/* writing + feed */
+.posts{list-style:none;margin:0;padding:0}
+.posts li{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.feed{list-style:none;margin:0;padding:0;font:.85rem var(--mono)}
+.feed li{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:.55rem 0;border-bottom:1px dashed var(--line)}
+.feed time{color:var(--muted)}
+
+/* about */
+.about p{max-width:38rem}
+footer{padding:3rem 0 4rem 2.5rem;font:.78rem var(--mono);color:var(--muted)}
+
+@media(min-width:1180px){section::before{display:block}}
+@media(max-width:640px){
+  main{margin-left:1rem}
+  section{padding-left:1.6rem}
+  h2::before{margin-left:-1.6rem}
+  .biz li{grid-template-columns:1fr auto}
+  .biz span{grid-column:1/-1;order:3}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="sections">
+  <div class="wrap">
+    <a class="me" href="#top">tobi.obembe</a>
+    <a href="#proof">proof</a><a href="#builds">builds</a><a href="#writing">writing</a><a href="#shipped">shipped</a><a href="#about">about</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="hero" data-entry="entry 00">
+  <div class="status" aria-live="polite"><i aria-hidden="true"></i><span id="status">currently: 3 hackathon submissions in judging</span></div>
+  <h1>tobi david obembe</h1>
+  <p class="pos">builder · founder — abuja, running an agent fleet</p>
+
+  <div class="num">
+    <strong>0.22x<span> → </span>1.31x</strong>
+    <p>kernel speedup on muse spark across 21 measured iterations. public leaderboard, so you can check it yourself.</p>
+  </div>
+
+  <div class="first">
+    <h2>short on time? check these three</h2>
+    <ul>
+      <li><b>the result</b><span>public leaderboard for the kernel challenge, handle Izecrypt</span><a href="https://openkernelchallenge.dev">openkernelchallenge.dev</a></li>
+      <li><b>a live product</b><span>3-agent ops room, running now</span><a href="https://opsroom.trenchesnetwork.xyz">opsroom.trenchesnetwork.xyz</a></li>
+      <li><b>the code</b><span>agentpay, open source under mit</span><a href="https://github.com/Izecrypt/agentpay">github.com/izcrypt/agentpay</a></li>
+    </ul>
+  </div>
+
+  <div class="links">
+    <a href="#proof">see the proof</a>
+    <a href="https://x.com/its_izecube">x: @its_izecube</a>
+    <a href="https://github.com/Izecrypt">github: izcrypt</a>
+    <a href="https://www.linkedin.com/in/its-izecube-85a768344/">linkedin</a>
+    <a href="mailto:tobiobembeofficial@gmail.com">contact</a>
+  </div>
+</section>
+
+<section class="proof" id="proof" data-entry="entry 01">
+  <h2>proof / open kernel challenge</h2>
+  <p>kernloop is my gpu kernel pipeline from the open kernel challenge (meta x paradigm). it starts slower than the baseline and ends 1.31x faster, and every step in between was measured and logged.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>what</th><th>value</th><th>check it</th></tr></thead>
+      <tbody>
+        <tr><td>starting point</td><td>0.22x</td><td><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
+        <tr><td>final result</td><td>1.31x</td><td><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
+        <tr><td>measured iterations</td><td>21</td><td><a href="https://x.com/its_izecube">build log on x</a></td></tr>
+        <tr><td>target hardware / model</td><td>h200 / muse spark</td><td><a href="https://openkernelchallenge.dev">the challenge</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">between iteration 1 and 21 the pipeline went from failing compiles to sourcing every step by measured price and latency. promoted iterations landed 22% to 40% mean improvements; every failed iteration is logged with its reason. the failed rows are the point: the record is honest, not curated.</p>
+</section>
+
+<section id="builds" data-entry="entry 02">
+  <h2>builds</h2>
+  <div class="grid" id="grid"></div>
+
+  <p class="sub-h">products and businesses (ongoing, not experiments)</p>
+  <ul class="biz" id="biz"></ul>
+</section>
+
+<section id="writing" data-entry="entry 03">
+  <h2>writing</h2>
+  <ul class="posts">
+    <li><span>gpu-brain, part 1: your brain is a gpu and you are running it wrong</span><a class="mono" href="https://x.com/its_izecube/status/2120063711922524354">x post</a></li>
+    <li><span>gpu-brain, part 2: your memory is stored in the wrong layout</span><a class="mono" href="https://x.com/its_izecube/status/2120778621946118504">x post</a></li>
+    <li><span>gpu-brain, part 3: the moving truck and the unpacking crew</span><a class="mono" href="https://x.com/its_izecube">x post</a></li>
+    <li><span>open agent hackathon 2026, official certificate (verifiable)</span><a class="mono" href="https://hackathon.genai.works/verify/CERT-2026-AEDRD">verify</a></li>
+    <li><span>build-in-public, everything else</span><a class="mono" href="https://x.com/its_izecube">@its_izecube</a></li>
+  </ul>
+</section>
+
+<section id="shipped" data-entry="entry 04">
+  <h2>shipped recently</h2>
+  <ul class="feed">
+    <li><time>nov 13</time><span>gpu-brain part 3 published. the trilogy is complete.</span></li>
+    <li><time>nov 13</time><span>nearagentpay demo live at agentpay.trenchesnetwork.xyz</span></li>
+    <li><time>nov 12</time><span>gpu-brain part 2 published</span></li>
+    <li><time>nov 8</time><span>near hackathon submitted, agents economy track</span></li>
+    <li><time>nov 4</time><span>signbridge submitted to the meta global ai developer hackathon</span></li>
+  </ul>
+  <p class="mono muted">an agent writes this list from the vault. it updates as things ship.</p>
+</section>
+
+<section class="about" id="about" data-entry="entry 05">
+  <h2>about</h2>
+  <p>i'm tobi, a builder and founder in abuja. i started in crypto, went looking for better tools, and the tools became the products. today i run a fleet of ai agents that ships software, enters hackathons and keeps this page current.</p>
+  <p>right now i'm building hoolie (group buying for nigeria), running an agent-operated product portfolio, and writing gpu-brain, a public series that teaches ai hardware through the human brain.</p>
+  <p>if you landed here from an application or a hackathon: everything on this page links to something you can check. if you want to work together, the fastest route is a dm on x or the email below.</p>
+  <div class="links">
+    <a href="https://x.com/its_izecube">x: @its_izecube</a>
+    <a href="https://github.com/Izecrypt">github: izcrypt</a>
+    <a href="https://www.linkedin.com/in/its-izecube-85a768344/">linkedin</a>
+    <a href="mailto:tobiobembeofficial@gmail.com">tobiobembeofficial@gmail.com</a>
+  </div>
+</section>
+
+<footer>© 2026 tobi david obembe · static page, no trackers</footer>
+</main>
+
+<script>
+const builds=[
+ {n:"nearagentpay",d:"per-step agent payments on near, built for the near agents hackathon.",c:"sub",s:"submitted",k:"results nov 18",l:[["repo","https://github.com/Izecrypt/nearagentpay"],["demo","https://agentpay.trenchesnetwork.xyz"]]},
+ {n:"switch-ops-room",d:"a 3-agent ops room that runs day-to-day operations like teammates.",c:"live",s:"live",k:"opsroom.trenchesnetwork.xyz",l:[["repo","https://github.com/Izecrypt/switch-ops-room"],["demo","https://opsroom.trenchesnetwork.xyz"]]},
+ {n:"signbridge",d:"two-way sign language translator built in 9 days for the meta hackathon.",c:"demo",s:"demo",k:"9 day build",l:[["repo","https://github.com/Izecrypt/signbridge"],["video","https://youtu.be/eLHdIYXji7I"]]},
+ {n:"agentpay",d:"open-source per-step payments for llm calls, with budgets and receipts.",c:"oss",s:"open source",k:"mit license",l:[["repo","https://github.com/Izecrypt/agentpay"]]},
+ {n:"routepay",d:"per-step inference sourcing paid over x402, for the airwallex hackathon.",c:"sub",s:"submitted",k:"metal award track",l:[]},
+ {n:"kernloop",d:"the open kernel challenge pipeline. the proof is the section above.",c:"live",s:"public",k:"0.22x → 1.31x",l:[["leaderboard","https://openkernelchallenge.dev"]]}
+];
+const biz=[
+ ["hoolie","group buying for nigeria. hoolie.ng coming.","park","coming"],
+ ["marketcube","growth practice for clients.","live","live"],
+ ["web3life / family","$fam ecosystem. wifpool live on robinhood chain mainnet.","live","live"],
+ ["reply assistant","an x reply assistant that writes in your tone.","live","live"],
+ ["oddladder","a sports odds experiment. every result recorded, kept internal.","park","internal"],
+ ["ansembot","telegram price bot for memecoins.","park","parked"],
+ ["trends tool","trend scouting that feeds the content engine.","live","live"],
+ ["ats","autonomous trading system for solana memecoins. architecture phase.","park","design"],
+ ["ensei","trend capital agent: community-voted memecoin launches.","park","parked"],
+ ["believe","believe trust, the holding company behind the portfolio.","park","forming"],
+ ["trenches","the network itself.","live","live"]
+];
+document.getElementById("grid").innerHTML=builds.map(b=>`
+ <article class="card"><div class="row"><h3>${b.n}</h3><span class="b ${b.c}">${b.s}</span></div>
+ <p>${b.d}</p><div class="k">${b.k}</div>
+ ${b.l.length?`<div class="l">${b.l.map(([t,h])=>`<a href="${h}">${t}</a>`).join("")}</div>`:""}</article>`).join("");
+document.getElementById("biz").innerHTML=biz.map(([n,d,c,s])=>`
+ <li><b>${n}</b><span>${d}</span><span class="b ${c}">${s}</span></li>`).join("");
+
+// one quiet moment: the status line rotates every 5s
+const lines=["currently: 3 hackathon submissions in judging","currently: near results nov 18","currently: gpu-brain trilogy complete"];
+const el=document.getElementById("status");let i=0;
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  setInterval(()=>{i=(i+1)%lines.length;el.textContent=lines[i]},5000);
+}
+</script>
+</body>
+</html>
