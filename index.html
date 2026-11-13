@@ -49,7 +49,7 @@ h2::before{content:"";display:inline-block;width:.6rem;height:.6rem;border:1px s
 h1{font:500 clamp(2.2rem,6vw,3.6rem)/1.1 var(--serif);letter-spacing:-.02em;margin:1.6rem 0 .8rem}
 .pos{font:1rem var(--mono);color:var(--muted);margin:0 0 3rem}
 .num{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.6rem 0}
-.num strong{font:700 clamp(2.4rem,8vw,4.6rem)/1 var(--mono);letter-spacing:-.04em;white-space:nowrap}
+.num strong{font:700 clamp(1.9rem,8vw,4.6rem)/1 var(--mono);letter-spacing:-.04em;white-space:nowrap}
 .num strong span{color:var(--live)}
 .num p{margin:0;max-width:22rem;color:var(--muted);font-size:1rem;line-height:1.5}
 .links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:1.6rem;font:.85rem var(--mono)}
@@ -63,7 +63,8 @@ h1{font:500 clamp(2.2rem,6vw,3.6rem)/1.1 var(--serif);letter-spacing:-.02em;marg
 .first li b{font:500 .9rem var(--mono)}
 .first li span{font-size:1rem;color:var(--muted)}
 .first li a{font:.85rem var(--mono)}
-@media(max-width:640px){.first li{grid-template-columns:1fr auto}.first li span{grid-column:1/-1;order:3}}
+.first li a{overflow-wrap:anywhere}
+@media(max-width:640px){.first li{grid-template-columns:1fr;gap:.15rem}.first li span{order:0}}
 
 /* proof */
 .proof p{max-width:38rem}
@@ -106,6 +107,11 @@ footer{padding:3rem 0 4rem 2.5rem;font:.78rem var(--mono);color:var(--muted)}
 
 @media(min-width:1180px){section::before{display:block}}
 @media(max-width:640px){
+  .proof thead{display:none}
+  .proof table,.proof tbody,.proof tr,.proof td{display:block;width:100%}
+  .proof tr{border:1px solid var(--line);margin-bottom:.8rem;padding:.5rem .9rem}
+  .proof td{border:none;padding:.3rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+  .proof td::before{content:attr(data-label);color:var(--muted);font-size:.75rem}
   main{margin-left:1rem}
   section{padding-left:1.6rem}
   h2::before{margin-left:-1.6rem}
@@ -161,10 +167,10 @@ footer{padding:3rem 0 4rem 2.5rem;font:.78rem var(--mono);color:var(--muted)}
     <table>
       <thead><tr><th>what</th><th>value</th><th>check it</th></tr></thead>
       <tbody>
-        <tr><td>starting point</td><td>0.22x</td><td><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
-        <tr><td>final result</td><td>1.31x</td><td><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
-        <tr><td>measured iterations</td><td>21</td><td><a href="https://x.com/its_izecube">build log on x</a></td></tr>
-        <tr><td>target hardware / model</td><td>h200 / muse spark</td><td><a href="https://openkernelchallenge.dev">the challenge</a></td></tr>
+        <tr><td data-label="what">starting point</td><td data-label="value">0.22x</td><td data-label="check it"><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
+        <tr><td data-label="what">final result</td><td data-label="value">1.31x</td><td data-label="check it"><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
+        <tr><td data-label="what">measured iterations</td><td data-label="value">21</td><td data-label="check it"><a href="https://x.com/its_izecube">build log on x</a></td></tr>
+        <tr><td data-label="what">target hardware / model</td><td data-label="value">h200 / muse spark</td><td data-label="check it"><a href="https://openkernelchallenge.dev">the challenge</a></td></tr>
       </tbody>
     </table>
   </div>
