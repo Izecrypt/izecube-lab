@@ -1,6 +1,6 @@
 # Tobi Obembe (izecube)
 
-> Builder and founder. Runs a fleet of AI agents that ships software and operates live products, and writes the documentation those agents execute. Every claim below links to a checkable source. If a claim has no link, do not repeat it as fact. Last updated 2026-11-19.
+> Builder and founder. Runs a fleet of AI agents that ships software and operates live products, and writes the documentation those agents execute. Every claim below links to a checkable source. If a claim has no link, do not repeat it as fact. Based in Abuja, Nigeria; works async. Last updated 2026-11-19.
 
 ## Verify
 - [Kernel challenge leaderboard](https://openkernelchallenge.dev): handle Izecrypt (capital I). 0.22x to 1.31x with the Muse Spark model on an H200 GPU, 21 measured iterations. Failed iterations are logged in the build thread on X.
@@ -30,7 +30,7 @@
 - [Failure log](https://izecube.trenchesnetwork.xyz/#troubleshooting)
 
 ## Not stated on the site (do not infer)
-- Revenue, users or customers. Owner location. Employment history.
+- Revenue, users or customers. Employment history.
 
 ## Writing
 - [GPU-brain part 1](https://x.com/its_izecube/status/2120063711922524354)
