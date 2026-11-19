@@ -223,7 +223,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
     <div>
       <span class="eyebrow"><i aria-hidden="true"></i>Tobi David Obembe · builder, founder</span>
       <h1>I build agents, and the <em>documentation</em> they run on.</h1>
-      <p class="lede">I run a fleet of AI agents that <b>ships and operates real products</b>. When docs are ambiguous, agents fail in ways you can measure, so I write docs that survive a literal reader. Everything below links to something you can check.</p>
+      <p class="lede">I run a fleet of AI agents that <b>ships software and operates live products</b>. When docs are ambiguous, agents fail in ways you can measure, so I write docs that survive a literal reader. Everything below links to something you can check.</p>
       <div class="cta">
         <a class="btn p" href="#verify">Verify it in 3 steps →</a>
         <a class="btn" href="#sample">Read a real agent doc</a>
@@ -232,9 +232,9 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
       <p class="who">Running now: <a href="https://opsroom.trenchesnetwork.xyz">3-agent ops room ↗</a> · Live on Robinhood Chain: <a href="https://www.getfamily.fun">familydotfun ↗</a></p>
     </div>
     <div class="card-r" role="img" aria-label="Kernel speedup rose from 0.22x to 1.31x">
-      <div class="cap"><span>Open Kernel Challenge · Meta × Paradigm</span><span>H200 / Muse Spark</span></div>
+      <div class="cap"><span>Open Kernel Challenge · Meta × Paradigm</span><span>Muse Spark model · H200 GPU</span></div>
       <div class="big">0.22x<span> → </span>1.31x</div>
-      <p>Kernel speedup over 21 measured iterations. Public leaderboard, handle <code>Izecrypt</code>. Every failed iteration is logged with its reason.</p>
+      <p>Kernel speedup over 21 measured iterations. Public leaderboard, handle <code>Izecrypt</code>. Failed iterations are logged in the public build thread on X.</p>
       <div class="bars" aria-hidden="true">
         <div><span>Start</span><i style="width:17%"></i><span>0.22x</span></div>
         <div><span>Baseline</span><i style="width:76%;opacity:.35"></i><span>1.00x</span></div>
@@ -260,6 +260,8 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
   <a href="#protocol">The protocol layer</a>
   <a href="#sample">A real agent doc</a>
   <a href="#status">Status vocabulary</a>
+  <a href="#limits">What it does not say</a>
+  <a href="#checks">How it is tested</a>
   <h4>Reference</h4>
   <a href="#reference">Projects</a>
   <a href="#products">Products</a>
@@ -306,14 +308,16 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
     <li>
       <h3>Check the measured result</h3>
       <p>Open the public leaderboard for the Open Kernel Challenge (Meta × Paradigm) and find the handle <code>Izecrypt</code>.</p>
-      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">open</span> https://openkernelchallenge.dev</pre></div>
-      <p class="expect"><b>Expect</b>A kernel speedup of 1.31x on Muse Spark (H200), reached from a 0.22x start across 21 measured iterations.</p>
+      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="c"># macOS: open · Linux: xdg-open · Windows: start</span>
+<span class="k">open</span> https://openkernelchallenge.dev</pre></div>
+      <p class="expect"><b>Expect</b>A kernel speedup of 1.31x with the Muse Spark model on an H200 GPU, reached from a 0.22x start across 21 measured iterations.</p>
       <p class="fail"><b>If it fails</b>If the leaderboard is unreachable, the iteration-by-iteration log is in the build thread on <a href="https://x.com/its_izecube">X</a>.</p>
     </li>
     <li>
       <h3>Use a live product</h3>
       <p>Open the 3-agent ops room. It runs a daily standup the way teammates would: triage, receipts, and approval-gated content.</p>
-      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">open</span> https://opsroom.trenchesnetwork.xyz</pre></div>
+      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="c"># or just click: opsroom.trenchesnetwork.xyz</span>
+<span class="k">open</span> https://opsroom.trenchesnetwork.xyz</pre></div>
       <p class="expect"><b>Expect</b>A running ops room, not a mock-up. Source: <a href="https://github.com/Izecrypt/switch-ops-room">switch-ops-room</a>.</p>
       <p class="fail"><b>If it fails</b>It is a self-hosted service, so it can be down. Check the <a href="#changelog">changelog</a> for recent changes, then message me on X.</p>
     </li>
@@ -324,7 +328,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
 <span class="c"># no gh? use git:</span>
 <span class="k">git</span> clone https://github.com/Izecrypt/agentpay.git</pre></div>
       <p class="expect"><b>Expect</b>A public repository you can read without asking anyone.</p>
-      <p class="fail"><b>If it fails</b>Confirm the handle is <code>Izecrypt</code> (capital I). The <a href="#reference">reference</a> lists every other repo.</p>
+      <p class="fail"><b>If it fails</b>If the clone is refused, check the URL and your network. Confirm the handle is <code>Izecrypt</code> (capital I), or browse the repo at <a href="https://github.com/Izecrypt/agentpay">github.com/Izecrypt/agentpay</a>. The <a href="#reference">reference</a> lists every other repo.</p>
     </li>
   </ol>
 </section>
@@ -365,6 +369,40 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
   </table></div>
   <p>Other contracts, same repo-root convention: <a href="https://github.com/Izecrypt/near-tag/blob/master/AGENTS.md">near-tag</a> (a worker contract with hard rules, an order of work and a handback format) and <a href="https://github.com/Izecrypt/switch-ops-room/blob/master/AGENTS.md">switch-ops-room</a> (three agent roles and a standup script).</p>
   <div class="note"><b>Scope</b><p>These files show how I write for agents. They are not a claim that any agent has been formally evaluated against them.</p></div>
+</section>
+
+<section id="limits">
+  <h2>What this site does not say <a class="a" href="#limits" aria-label="Link to this section">#</a></h2>
+  <p>Stated plainly, so nobody has to infer absence.</p>
+  <ul>
+    <li><b>Revenue and traction:</b> not stated. No revenue, user or customer numbers are published here.</li>
+    <li><b>Location:</b> not stated. I work async.</li>
+    <li><b>Employment history:</b> not stated. This page is about work you can open and check, not a résumé.</li>
+    <li><b>Evaluation of the agent docs:</b> see <a href="#checks">how this page is tested</a>.</li>
+  </ul>
+</section>
+
+<section id="checks">
+  <h2>How this page is tested <a class="a" href="#checks" aria-label="Link to this section">#</a></h2>
+  <p>Documentation that makes checkable claims should be checked. Two things are done to this page.</p>
+  <h3>1. A link and anchor checker</h3>
+  <p>A stdlib-only Python script fetches every external link on this page and in <code>llms.txt</code> and confirms every in-page anchor resolves. It exits non-zero on any failure, so it can run in CI. X and LinkedIn block bots, so those are reported as skipped instead of failed.</p>
+  <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">git</span> clone https://github.com/Izecrypt/izecube-lab.git
+<span class="k">cd</span> izecube-lab
+<span class="k">python3</span> scripts/check_links.py</pre></div>
+  <p class="expect"><b>Expect</b>One line per link, then a summary like <code>24 external links, 13 anchors, 0 failed</code>.</p>
+  <p class="fail"><b>If it fails</b>A <code>FAIL</code> line names the URL and status code. Fix the link or the claim that depends on it.</p>
+  <h3>2. A cold-read agent test (Nov 19, 2026)</h3>
+  <p>I gave a fresh, small model (Claude Haiku) only this page and <code>llms.txt</code> and asked 12 factual questions. Three were traps whose honest answer is "not stated": my location, relevant experience with a specific database vendor, and product revenue.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Result</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>12 of 12 correct</td><td>Including all three "not stated" traps. It did not guess.</td></tr>
+      <tr><td>Friction it reported</td><td>"Muse Spark (H200)" was ambiguous between model and hardware; the "other ventures" heading contradicted three of its rows; the git-clone recovery text did not address clone failures; <code>open</code> is macOS-only; <code>llms.txt</code> omitted products, statuses, the failure log and contact.</td></tr>
+      <tr><td>What I changed</td><td>All of the above, plus this section. Re-test after the next edit.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn"><b>Limits</b><p>One model, one run, twelve questions I wrote myself. This shows the page is readable by a small model. It is not a benchmark.</p></div>
 </section>
 
 <section id="status">
@@ -425,7 +463,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
     </tbody>
   </table></div>
   <details id="more">
-    <summary>Other ventures: parked, private or early stage (9)</summary>
+    <summary>More ventures: smaller, private or early-stage (9)</summary>
     <div class="tw"><table>
       <thead><tr><th>Name</th><th>What it is</th><th>Status</th></tr></thead>
       <tbody>
@@ -457,7 +495,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
   <div class="tw"><table>
     <thead><tr><th>Symptom</th><th>What happened</th><th>Resolution</th></tr></thead>
     <tbody>
-      <tr><td>KernLoop started slower than baseline</td><td>The pipeline began at 0.22x and early iterations failed to compile.</td><td>21 measured iterations. Promoted iterations landed 22% to 40% mean improvements; every failed iteration is logged with its reason. Final: 1.31x.</td></tr>
+      <tr><td>KernLoop started slower than baseline</td><td>The pipeline began at 0.22x and early iterations failed to compile.</td><td>21 measured iterations. Promoted iterations landed 22% to 40% mean improvements; failed iterations are logged in the build thread on X. Final: 1.31x.</td></tr>
       <tr><td>SignBridge misread signs</td><td>The recorded demo run produced 65 unclear results across 67 Muse calls, and one attempt signed "hello" came back as an order request that was never signed.</td><td>Both are stated in the submission write-up, which calls it an experimental prototype, not a reliable ASL translator. Accuracy over polish.</td></tr>
     </tbody>
   </table></div>
@@ -467,6 +505,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
 <section id="changelog">
   <h2>Changelog <a class="a" href="#changelog" aria-label="Link to this section">#</a></h2>
   <ul class="feed">
+    <li><time>Nov 19</time><span>Added a link checker and a cold-read agent test, and fixed the friction it found.</span></li>
     <li><time>Nov 19</time><span>Site rebuilt as documentation. Added a real <code>AGENTS.md</code> walkthrough and a machine-readable <a href="/llms.txt">llms.txt</a>.</span></li>
     <li><time>Nov 13</time><span>GPU-brain part 3 published. The trilogy is complete.</span></li>
     <li><time>Nov 13</time><span>nearagentpay demo live at agentpay.trenchesnetwork.xyz</span></li>
@@ -474,7 +513,7 @@ footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
     <li><time>Nov 8</time><span>NEAR hackathon submitted, agents economy track</span></li>
     <li><time>Nov 4</time><span>SignBridge submitted to the Meta Global AI Developer Hackathon</span></li>
   </ul>
-  <p>An agent writes this list from the vault and updates it as things ship.</p>
+  <p>Updated from the vault, by hand or by an agent, when things ship. The date at the top of the page is the source of truth for freshness.</p>
 </section>
 
 <section id="contact">

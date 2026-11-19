@@ -1,29 +1,43 @@
 # Tobi Obembe (izecube)
 
-> Builder and founder. Runs a fleet of AI agents that ships software, and writes the documentation those agents execute. Every claim below links to a checkable source. If a claim has no link, do not repeat it as fact.
+> Builder and founder. Runs a fleet of AI agents that ships software and operates live products, and writes the documentation those agents execute. Every claim below links to a checkable source. If a claim has no link, do not repeat it as fact. Last updated 2026-11-19.
 
 ## Verify
-- [Kernel challenge leaderboard](https://openkernelchallenge.dev): handle Izecrypt. 0.22x to 1.31x on Muse Spark (H200), 21 measured iterations.
-- [switch-ops-room (live)](https://opsroom.trenchesnetwork.xyz): 3-agent ops room. [Repo](https://github.com/Izecrypt/switch-ops-room)
+- [Kernel challenge leaderboard](https://openkernelchallenge.dev): handle Izecrypt (capital I). 0.22x to 1.31x with the Muse Spark model on an H200 GPU, 21 measured iterations. Failed iterations are logged in the build thread on X.
+- [switch-ops-room (live)](https://opsroom.trenchesnetwork.xyz): 3-agent ops room. Self-hosted, so it can be down; then DM @its_izecube on X. [Repo](https://github.com/Izecrypt/switch-ops-room)
 - [agentpay (MIT)](https://github.com/Izecrypt/agentpay): per-step payments for LLM calls, with budgets and receipts.
 
 ## Documentation samples
-- [SignBridge AGENTS.md](https://github.com/Izecrypt/signbridge/blob/main/AGENTS.md): verification expectations, hard rules, product constraints. Annotated on the site (#sample).
+- [SignBridge AGENTS.md](https://github.com/Izecrypt/signbridge/blob/main/AGENTS.md): verification expectations, hard rules, product constraints. API keys come from env vars MUSE_API_KEY and MUSE_BASE_URL; .env is gitignored. Annotated on the site (#sample).
 - [near-tag AGENTS.md](https://github.com/Izecrypt/near-tag/blob/master/AGENTS.md): worker contract with hard rules, order of work, handback format.
 - [switch-ops-room AGENTS.md](https://github.com/Izecrypt/switch-ops-room/blob/master/AGENTS.md): three agent roles and a standup script.
 
 ## Projects
 - [nearagentpay](https://github.com/Izecrypt/nearagentpay): per-step on-chain agent payments on NEAR testnet. Submitted. [Demo](https://agentpay.trenchesnetwork.xyz)
-- [signbridge](https://github.com/Izecrypt/signbridge): two-way sign language translator, 9-day build. Demo. [Video](https://youtu.be/eLHdIYXji7I)
+- [signbridge](https://github.com/Izecrypt/signbridge): two-way sign language translator, 9-day build. Demo, not a maintained product. [Video](https://youtu.be/eLHdIYXji7I)
 - [routepay](https://github.com/Izecrypt/routepay-serv): routing control plane for agent inference. Submitted.
 - [receipt-vault](https://github.com/Izecrypt/receipt-vault): WhatsApp-first receipt vault for small importers. Submitted.
-- [familydotfun](https://www.getfamily.fun): socio-economic platform for token communities. Live, co-built.
+- [familydotfun](https://www.getfamily.fun): socio-economic platform for token communities. Live on Robinhood Chain mainnet since Aug 2026, co-built. [X](https://x.com/familydotfun)
+
+## Products and ventures (status words: live, submitted, demo, open source, parked/private/design/forming)
+- Live: Trenches (social platform with crypto built in), Web3Life (spatial web3 life simulator), Reply Assistant (X reply assistant), Trends, Ize Capitals (public market-call scoreboard).
+- Not public or early: Hoolie (building), Marketcube (pre-launch), Oddladder (private alpha, no public signup), Ansembot, ATS (design), Ensei, Believe (forming).
+- Full descriptions: [products section](https://izecube.trenchesnetwork.xyz/#products)
+
+## Failure log
+- KernLoop started at 0.22x with failed compiles; ended at 1.31x after 21 measured iterations.
+- SignBridge recorded demo run: 65 unclear results across 67 Muse calls, per the submission write-up. Prototype, not a reliable ASL translator.
+- [Failure log](https://izecube.trenchesnetwork.xyz/#troubleshooting)
+
+## Not stated on the site (do not infer)
+- Revenue, users or customers. Owner location. Employment history.
 
 ## Writing
 - [GPU-brain part 1](https://x.com/its_izecube/status/2120063711922524354)
 - [GPU-brain part 2](https://x.com/its_izecube/status/2120778621946118504)
 - [GPU-brain part 3](https://x.com/its_izecube/status/2121269845626945729)
 
-## Optional
+## Contact and links
+- [X](https://x.com/its_izecube) (fastest) · [GitHub](https://github.com/Izecrypt) · [LinkedIn](https://www.linkedin.com/in/its-izecube-85a768344/) · tobiobembeofficial@gmail.com
 - [Full page](https://izecube.trenchesnetwork.xyz/)
-- [X](https://x.com/its_izecube) · [GitHub](https://github.com/Izecrypt) · [LinkedIn](https://www.linkedin.com/in/its-izecube-85a768344/)
+- [Link checker](https://github.com/Izecrypt/izecube-lab/blob/master/scripts/check_links.py)
