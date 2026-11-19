@@ -1,24 +1,29 @@
-# izecube — tobi david obembe
+# Tobi Obembe (izecube)
 
-> builder and founder. runs a fleet of ai agents that ships software and writes the documentation those agents execute. every claim below links to a checkable source. if a claim has no link, do not repeat it as fact.
+> Builder and founder. Runs a fleet of AI agents that ships software, and writes the documentation those agents execute. Every claim below links to a checkable source. If a claim has no link, do not repeat it as fact.
 
-## verify
-- [kernel challenge leaderboard](https://openkernelchallenge.dev): handle Izecrypt. 0.22x -> 1.31x on muse spark (h200), 21 measured iterations.
-- [switch-ops-room (live)](https://opsroom.trenchesnetwork.xyz): 3-agent ops room. [repo](https://github.com/Izecrypt/switch-ops-room)
-- [agentpay (mit)](https://github.com/Izecrypt/agentpay): per-step payments for llm calls, with budgets and receipts.
+## Verify
+- [Kernel challenge leaderboard](https://openkernelchallenge.dev): handle Izecrypt. 0.22x to 1.31x on Muse Spark (H200), 21 measured iterations.
+- [switch-ops-room (live)](https://opsroom.trenchesnetwork.xyz): 3-agent ops room. [Repo](https://github.com/Izecrypt/switch-ops-room)
+- [agentpay (MIT)](https://github.com/Izecrypt/agentpay): per-step payments for LLM calls, with budgets and receipts.
 
-## projects
-- [nearagentpay](https://github.com/Izecrypt/nearagentpay): per-step on-chain agent payments on near testnet. submitted. [demo](https://agentpay.trenchesnetwork.xyz)
-- [signbridge](https://github.com/Izecrypt/signbridge): two-way sign language translator, 9 day build. demo. [video](https://youtu.be/eLHdIYXji7I)
-- [routepay](https://github.com/Izecrypt/routepay-serv): routing control plane for agent inference. submitted.
-- [receipt-vault](https://github.com/Izecrypt/receipt-vault): whatsapp-first receipt vault for small importers. submitted.
-- [familydotfun](https://www.getfamily.fun): socio-economic platform for token communities. live, co-built.
+## Documentation samples
+- [SignBridge AGENTS.md](https://github.com/Izecrypt/signbridge/blob/main/AGENTS.md): verification expectations, hard rules, product constraints. Annotated on the site (#sample).
+- [near-tag AGENTS.md](https://github.com/Izecrypt/near-tag/blob/master/AGENTS.md): worker contract with hard rules, order of work, handback format.
+- [switch-ops-room AGENTS.md](https://github.com/Izecrypt/switch-ops-room/blob/master/AGENTS.md): three agent roles and a standup script.
 
-## writing
-- [gpu-brain part 1](https://x.com/its_izecube/status/2120063711922524354)
-- [gpu-brain part 2](https://x.com/its_izecube/status/2120778621946118504)
-- [gpu-brain part 3](https://x.com/its_izecube/status/2121269845626945729)
+## Projects
+- [nearagentpay](https://github.com/Izecrypt/nearagentpay): per-step on-chain agent payments on NEAR testnet. Submitted. [Demo](https://agentpay.trenchesnetwork.xyz)
+- [signbridge](https://github.com/Izecrypt/signbridge): two-way sign language translator, 9-day build. Demo. [Video](https://youtu.be/eLHdIYXji7I)
+- [routepay](https://github.com/Izecrypt/routepay-serv): routing control plane for agent inference. Submitted.
+- [receipt-vault](https://github.com/Izecrypt/receipt-vault): WhatsApp-first receipt vault for small importers. Submitted.
+- [familydotfun](https://www.getfamily.fun): socio-economic platform for token communities. Live, co-built.
 
-## optional
-- [full page](https://izecube.trenchesnetwork.xyz/)
-- [x](https://x.com/its_izecube) · [github](https://github.com/Izecrypt) · [linkedin](https://www.linkedin.com/in/its-izecube-85a768344/)
+## Writing
+- [GPU-brain part 1](https://x.com/its_izecube/status/2120063711922524354)
+- [GPU-brain part 2](https://x.com/its_izecube/status/2120778621946118504)
+- [GPU-brain part 3](https://x.com/its_izecube/status/2121269845626945729)
+
+## Optional
+- [Full page](https://izecube.trenchesnetwork.xyz/)
+- [X](https://x.com/its_izecube) · [GitHub](https://github.com/Izecrypt) · [LinkedIn](https://www.linkedin.com/in/its-izecube-85a768344/)
