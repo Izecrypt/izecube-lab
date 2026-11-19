@@ -3,201 +3,448 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>tobi david obembe — builder, founder</title>
-<meta name="description" content="builder and founder in abuja, running an agent fleet. every claim on this page links to something you can check.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+<title>izecube docs — tobi obembe</title>
+<meta name="description" content="docs for the work of tobi david obembe: a verification guide, project reference, and the protocol layer an agent fleet runs on. every claim links to something checkable.">
+<meta property="og:title" content="tobi obembe — i build agents, and the documentation they run on">
+<meta property="og:description" content="0.22x → 1.31x on a public gpu-kernel leaderboard. a live 3-agent ops room. open-source code. every claim checkable.">
+<meta property="og:type" content="website">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2316a34a'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='monospace' font-weight='bold'>iz</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ProfilePage",
+ "mainEntity": {
+  "@type": "Person",
+  "name": "tobi david obembe",
+  "alternateName": "its_izecube",
+  "jobTitle": "builder, founder",
+  "url": "https://izecube.trenchesnetwork.xyz",
+  "sameAs": [
+   "https://x.com/its_izecube",
+   "https://github.com/Izecrypt",
+   "https://www.linkedin.com/in/its-izecube-85a768344/"
+  ]
+ }
+}
+</script>
 <style>
 :root{
-  --bg:#16171a; --surface:#1d1f23; --line:#2d3035; --text:#dcd9cf; --muted:#8b8f96;
-  --live:#6fbf73; --sub:#d9a441; --park:#7b7f85;
+  --bg:#ffffff; --side:#f7f8f7; --surface:#f3f5f3; --line:#e2e6e2; --text:#1b1f1c; --muted:#5d665f;
+  --accent:#15803d; --accent-bg:#e8f5ec; --code-bg:#0f1511; --code-fg:#d7e3d9; --code-mut:#6f8574;
+  --live:#15803d; --sub:#a16207; --park:#6b7280; --demo:#2563eb; --oss:#7c3aed;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --serif:"Newsreader",Georgia,"Times New Roman",serif;
-  color-scheme:dark;
+  color-scheme:light dark;
 }
+@media(prefers-color-scheme:dark){:root{
+  --bg:#0e1210; --side:#121815; --surface:#161d19; --line:#242d27; --text:#e4eae5; --muted:#94a198;
+  --accent:#4ade80; --accent-bg:#13271a; --code-bg:#080b09; --code-fg:#d7e3d9;
+  --live:#4ade80; --sub:#e0b13f; --park:#9ca3af; --demo:#7aa7f5; --oss:#b79bf0;}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
-body{margin:0;background:var(--bg);color:var(--text);font:1.125rem/1.65 var(--serif);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration-color:var(--muted);text-underline-offset:.2em}
-a:hover{text-decoration-color:var(--text)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--live);outline-offset:3px;border-radius:2px}
-.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
-.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.01em}
-.muted{color:var(--muted)}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+code{font:.86em var(--mono);background:var(--surface);border:1px solid var(--line);padding:.1em .38em;border-radius:4px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:5;background:rgba(22,23,26,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:1.5rem;align-items:center;height:3.25rem;overflow-x:auto;white-space:nowrap}
-nav a{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--text)}
-nav a.me{color:var(--text);margin-right:auto;font-weight:500}
-
-/* notebook margin: a ruled line down the left of the content */
-main{border-left:1px solid var(--line);margin-left:max(1.5rem,calc((100vw - 62rem)/2 + 1.5rem))}
-section{padding:4.5rem 0 1rem 2.5rem;max-width:57rem;position:relative}
-section::before{content:attr(data-entry);position:absolute;left:-1px;top:4.9rem;transform:translateX(-100%);padding-right:.9rem;font:.72rem var(--mono);color:var(--muted);display:none}
-h2{font:500 .95rem var(--mono);margin:0 0 2rem;color:var(--muted)}
-h2::before{content:"";display:inline-block;width:.6rem;height:.6rem;border:1px solid var(--muted);border-radius:50%;margin:0 .8rem 0 -2.5rem;background:var(--bg);transform:translateX(calc(-.3rem + 1px));vertical-align:middle}
 
 /* hero */
-.hero{padding-top:5rem}
-.status{font:.82rem var(--mono);color:var(--live);display:flex;gap:.6rem;align-items:center;min-height:1.6rem}
-.status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--live);animation:pulse 2.4s ease-in-out infinite}
+.hero{position:relative;border-bottom:1px solid var(--line);background:radial-gradient(60rem 26rem at 78% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),var(--bg);overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:44px 44px;opacity:.35;mask-image:linear-gradient(to bottom,#000,transparent 85%);-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}
+.hero-in{position:relative;z-index:1;max-width:84rem;margin:0 auto;padding:4rem 1.6rem 3rem;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:center}
+.hero-in>*{min-width:0}
+.eyebrow{max-width:100%;display:inline-flex;align-items:center;gap:.6rem;font:.78rem var(--mono);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);background:var(--accent-bg);border-radius:99px;padding:.3rem .85rem}
+.eyebrow i{width:.45rem;height:.45rem;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.25}}
-h1{font:500 clamp(2.2rem,6vw,3.6rem)/1.1 var(--serif);letter-spacing:-.02em;margin:1.6rem 0 .8rem}
-.pos{font:1rem var(--mono);color:var(--muted);margin:0 0 3rem}
-.num{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.6rem 0}
-.num strong{font:700 clamp(1.9rem,8vw,4.6rem)/1 var(--mono);letter-spacing:-.04em;white-space:nowrap}
-.num strong span{color:var(--live)}
-.num p{margin:0;max-width:22rem;color:var(--muted);font-size:1rem;line-height:1.5}
-.links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:1.6rem;font:.85rem var(--mono)}
+.hero h1{font:700 clamp(2.4rem,5.6vw,4.2rem)/1.04 var(--sans);letter-spacing:-.035em;margin:1.3rem 0 1.1rem}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:1.2rem;max-width:36rem;color:var(--muted)}
+.hero .lede b{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.8rem 0 0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.2rem;border-radius:9px;font:600 .95rem var(--sans);text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--bg)}
+.btn:hover{border-color:var(--accent)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.p:hover{filter:brightness(1.08)}
+.who{margin-top:1.4rem;font:.8rem var(--mono);color:var(--muted)}
+.who a{color:var(--muted)}
+.card-r{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.5rem 1.2rem;box-shadow:0 20px 50px -25px #000a}
+.card-r .cap{display:flex;justify-content:space-between;font:.72rem var(--mono);color:var(--muted);margin-bottom:.8rem}
+.big{font:700 clamp(2.6rem,5vw,3.9rem)/1 var(--mono);letter-spacing:-.05em;white-space:nowrap}
+.big span{color:var(--accent)}
+.card-r p{margin:.6rem 0 1rem;font-size:.95rem;color:var(--muted)}
+.bars{display:grid;gap:.55rem;font:.74rem var(--mono);color:var(--muted)}
+.bars div{display:grid;grid-template-columns:4.5rem 1fr 3rem;align-items:center;gap:.6rem}
+.bars i{display:block;height:.7rem;border-radius:4px;background:var(--park);opacity:.6}
+.bars .win i{background:var(--accent);opacity:1}
+.bars .base{position:relative}
+.stats{position:relative;z-index:1;max-width:84rem;margin:0 auto;padding:0 1.6rem 2.2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1px}
+.stats a{display:block;padding:1rem 1.2rem;background:var(--bg);border:1px solid var(--line);margin:0 -1px 0 0;text-decoration:none;color:var(--text)}
+.stats a:hover{background:var(--surface)}
+.stats b{display:block;font:700 1.7rem/1.1 var(--mono);letter-spacing:-.03em}
+.stats span{font-size:.82rem;color:var(--muted)}
+@media(max-width:900px){.hero-in{grid-template-columns:minmax(0,1fr);gap:2rem;padding-top:2.6rem}.stats{grid-template-columns:1fr 1fr}.stats a{margin:0 0 -1px 0}}
 
-/* check these first */
-.first{margin-top:2rem;border:1px solid var(--line);background:var(--surface);padding:1.2rem 1.4rem}
-.first h2{margin:0 0 .6rem}
-.first h2::before{display:none}
-.first ul{list-style:none;margin:0;padding:0}
-.first li{display:grid;grid-template-columns:9rem 1fr auto;gap:1rem;align-items:baseline;padding:.65rem 0;border-top:1px solid var(--line)}
-.first li b{font:500 .9rem var(--mono)}
-.first li span{font-size:1rem;color:var(--muted)}
-.first li a{font:.85rem var(--mono)}
-.first li a{overflow-wrap:anywhere}
-@media(max-width:640px){.first li{grid-template-columns:1fr;gap:.15rem}.first li span{order:0}}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;height:3.5rem;display:flex;align-items:center;gap:1rem;padding:0 1.25rem;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:600;color:var(--text);text-decoration:none}
+.logo i{display:grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:6px;background:var(--accent);color:var(--bg);font:700 .75rem var(--mono);font-style:normal}
+.ver{font:.72rem var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:.1rem .55rem}
+.search{margin-left:auto;position:relative;width:min(20rem,45vw)}
+.search input{width:100%;font:.88rem var(--sans);padding:.45rem .8rem .45rem 2rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text)}
+.search svg{position:absolute;left:.65rem;top:50%;translate:0 -50%;width:.9rem;height:.9rem;stroke:var(--muted)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:.3rem .6rem;font:.85rem var(--sans)}
 
-/* proof */
-.proof p{max-width:38rem}
-table{width:100%;border-collapse:collapse;font:.85rem var(--mono);margin:1.6rem 0}
-th,td{text-align:left;padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--line);font-weight:400}
-th{color:var(--muted)}
-td:last-child,th:last-child{text-align:right;padding-right:0}
-.tw{overflow-x:auto}
+/* layout */
+.shell{display:grid;grid-template-columns:15.5rem minmax(0,1fr) 13.5rem;max-width:84rem;margin:0 auto}
+.side{position:sticky;top:3.5rem;height:calc(100vh - 3.5rem);overflow:auto;padding:1.5rem 1rem 2rem 1.25rem;border-right:1px solid var(--line);background:var(--side)}
+.side h4{font:600 .7rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:1.4rem 0 .4rem}
+.side h4:first-child{margin-top:0}
+.side a{display:block;padding:.3rem .6rem;border-radius:6px;color:var(--muted);text-decoration:none;font-size:.9rem}
+.side a:hover{color:var(--text);background:var(--surface)}
+.side a.on{color:var(--accent);background:var(--accent-bg);font-weight:500}
+main{padding:2.5rem 3rem 5rem;min-width:0;max-width:52rem}
+.toc{position:sticky;top:3.5rem;align-self:start;padding:2.7rem 1rem 2rem 0;font-size:.82rem}
+.toc h4{font:600 .7rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 .6rem}
+.toc a{display:block;color:var(--muted);text-decoration:none;padding:.2rem 0 .2rem .8rem;border-left:2px solid var(--line)}
+.toc a:hover{color:var(--text)}
+.toc a.on{color:var(--accent);border-left-color:var(--accent)}
+
+/* type */
+.crumb{font:.78rem var(--mono);color:var(--muted);margin-bottom:.6rem}
+h1{font:700 clamp(2rem,4.4vw,2.7rem)/1.15 var(--sans);letter-spacing:-.025em;margin:0 0 .8rem}
+.lede{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0 0 1.6rem}
+h2{font:650 1.55rem/1.25 var(--sans);letter-spacing:-.015em;margin:3.6rem 0 .8rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+h2 .a{color:var(--muted);text-decoration:none;font-weight:400;margin-left:.4rem;opacity:0}
+h2:hover .a{opacity:1}
+h3{font:600 1.05rem var(--sans);margin:1.8rem 0 .4rem}
+p{margin:.6rem 0 1rem;max-width:42rem}
+ul,ol{max-width:42rem}
+li{margin:.25rem 0}
+
+/* callouts */
+.note{border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);border-radius:8px;padding:.8rem 1rem;margin:1.2rem 0;max-width:42rem}
+.note b{display:block;font:600 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.2rem}
+.note p{margin:.2rem 0}
+.note.warn{border-left-color:var(--sub)}.note.warn b{color:var(--sub)}
+
+/* code */
+.code{position:relative;margin:1rem 0 1.4rem;border-radius:10px;background:var(--code-bg);overflow:hidden;border:1px solid var(--line)}
+.code .bar{display:flex;justify-content:space-between;align-items:center;padding:.4rem .9rem;border-bottom:1px solid #ffffff14;font:.72rem var(--mono);color:var(--code-mut)}
+.code button{font:.72rem var(--mono);background:none;border:1px solid #ffffff24;color:var(--code-fg);border-radius:5px;padding:.15rem .55rem;cursor:pointer}
+.code button:hover{background:#ffffff12}
+.code pre{margin:0;padding:1rem;overflow-x:auto;font:.82rem/1.65 var(--mono);color:var(--code-fg)}
+.code .c{color:var(--code-mut)}.code .k{color:#7ee0a0}
+
+/* steps */
+.steps{list-style:none;counter-reset:s;padding:0;max-width:none}
+.steps>li{counter-increment:s;position:relative;padding:0 0 1.4rem 2.8rem;margin:0;border-left:1px solid var(--line);margin-left:.9rem}
+.steps>li::before{content:counter(s);position:absolute;left:-.95rem;top:0;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--accent-bg);color:var(--accent);border:1px solid var(--accent);display:grid;place-items:center;font:600 .8rem var(--mono)}
+.steps>li:last-child{border-left-color:transparent}
+.steps h3{margin:.1rem 0 .3rem}
+.expect,.fail{font-size:.9rem;margin:.4rem 0;max-width:40rem}
+.expect b,.fail b{font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.05em;margin-right:.4rem}
+.expect b{color:var(--accent)}.fail b{color:var(--sub)}
+
+/* tables */
+.tw{overflow-x:auto;margin:1rem 0 1.6rem;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{text-align:left;padding:.65rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font:600 .72rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--surface)}
+td:first-child{white-space:nowrap}
 
 /* badges */
-.b{display:inline-flex;align-items:center;gap:.4rem;font:.72rem var(--mono);color:var(--c);border:1px solid var(--c);border-radius:99px;padding:.1rem .6rem}
-.b::before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--c)}
-.live{--c:var(--live)}.sub{--c:var(--sub)}.park{--c:var(--park)}.demo{--c:#7aa7d9}.oss{--c:#b79be0}
+.b{display:inline-flex;align-items:center;gap:.35rem;font:500 .7rem var(--mono);color:var(--c);border:1px solid color-mix(in srgb,var(--c) 45%,transparent);border-radius:99px;padding:.05rem .55rem;white-space:nowrap}
+.b::before{content:"";width:.38rem;height:.38rem;border-radius:50%;background:var(--c)}
+.live{--c:var(--live)}.sub{--c:var(--sub)}.park{--c:var(--park)}.demo{--c:var(--demo)}.oss{--c:var(--oss)}
 
-/* builds */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:var(--bg);padding:1.3rem 1.3rem 1.1rem;display:flex;flex-direction:column;gap:.7rem;transition:background .15s}
-.card:hover{background:var(--surface)}
-.card h3{font:500 1rem var(--mono);margin:0}
-.card p{margin:0;font-size:1rem;line-height:1.5;color:var(--muted);flex:1}
-.card .k{font:.8rem var(--mono)}
-.card .row{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
-.card .l{font:.78rem var(--mono);display:flex;gap:1rem}
-.biz{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.biz li{display:grid;grid-template-columns:9rem 1fr auto;gap:1rem;align-items:baseline;padding:.8rem 0;border-bottom:1px solid var(--line)}
-.biz b{font:500 .9rem var(--mono)}
-.biz span{color:var(--muted);font-size:1rem}
-.sub-h{font:.8rem var(--mono);color:var(--muted);margin:2.6rem 0 .8rem}
+/* reference */
+.refs{display:grid;gap:1rem}
+.ref{border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;background:var(--bg)}
+.ref header{display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.ref h3{margin:0}
+.ref h3 code{font-size:1rem;background:none;border:0;padding:0;font-weight:500}
+.ref p{margin:.5rem 0}
+.ref dl{display:grid;grid-template-columns:4.5rem 1fr;gap:.2rem .8rem;margin:.5rem 0 0;font-size:.88rem}
+.ref dt{font:.72rem var(--mono);color:var(--muted);padding-top:.15rem}
+.ref dd{margin:0}
+[hidden]{display:none!important}
+.empty{color:var(--muted);font-size:.9rem}
 
-/* writing + feed */
-.posts{list-style:none;margin:0;padding:0}
-.posts li{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
-.feed{list-style:none;margin:0;padding:0;font:.85rem var(--mono)}
-.feed li{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:.55rem 0;border-bottom:1px dashed var(--line)}
-.feed time{color:var(--muted)}
+.feed{list-style:none;padding:0;margin:1rem 0}
+.feed li{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:.6rem 0;border-bottom:1px dashed var(--line);margin:0}
+.feed time{font:.8rem var(--mono);color:var(--muted);padding-top:.15rem}
+.pager{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.9rem}
+footer{color:var(--muted);font:.78rem var(--mono);margin-top:2.5rem}
 
-/* about */
-.about p{max-width:38rem}
-footer{padding:3rem 0 4rem 2.5rem;font:.78rem var(--mono);color:var(--muted)}
-
-@media(min-width:1180px){section::before{display:block}}
-@media(max-width:640px){
-  .proof thead{display:none}
-  .proof table,.proof tbody,.proof tr,.proof td{display:block;width:100%}
-  .proof tr{border:1px solid var(--line);margin-bottom:.8rem;padding:.5rem .9rem}
-  .proof td{border:none;padding:.3rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
-  .proof td::before{content:attr(data-label);color:var(--muted);font-size:.75rem}
-  main{margin-left:1rem}
-  section{padding-left:1.6rem}
-  h2::before{margin-left:-1.6rem}
-  .biz li{grid-template-columns:1fr auto}
-  .biz span{grid-column:1/-1;order:3}
+@media(max-width:1100px){.shell{grid-template-columns:15.5rem minmax(0,1fr)}.toc{display:none}main{padding:2rem 1.6rem 4rem}}
+@media(max-width:760px){
+  .big{font-size:clamp(1.9rem,11vw,2.6rem)}.hero-in{padding:2rem 1rem}.stats{padding:0 1rem 1.6rem}.stats b{font-size:1.35rem}.search{width:auto;flex:1}.top{padding:0 .8rem;gap:.6rem}.logo span{display:none}
+  .shell{display:block}.menu{display:block}
+  .side{position:fixed;inset:3.5rem 0 0 0;height:auto;z-index:15;display:none;border:0}
+  .side.open{display:block}
+  .ver{display:none}
+  main{padding:1.6rem 1rem 4rem}
+  .feed li{grid-template-columns:1fr;gap:0}
+  td:first-child{white-space:normal}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
-<nav aria-label="sections">
-  <div class="wrap">
-    <a class="me" href="#top">tobi.obembe</a>
-    <a href="#proof">proof</a><a href="#builds">builds</a><a href="#writing">writing</a><a href="#shipped">shipped</a><a href="#about">about</a>
+<header class="top" id="top">
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="side">menu</button>
+  <a class="logo" href="#top"><i>iz</i><span>izecube docs</span></a>
+  <span class="ver">v2026.11 · static, no trackers</span>
+  <label class="search"><span hidden>filter projects</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="filter projects…" autocomplete="off">
+  </label>
+</header>
+
+<section class="hero" aria-label="introduction">
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow"><i aria-hidden="true"></i>tobi david obembe · builder, founder</span>
+      <h1>i build agents, and the <em>documentation</em> they run on.</h1>
+      <p class="lede">i run a fleet of ai agents that <b>ships and operates real products</b>. when the docs are ambiguous, agents fail in ways you can measure, so i write docs that survive a literal reader. everything below links to something you can check.</p>
+      <div class="cta">
+        <a class="btn p" href="#verify">verify it in 3 steps →</a>
+        <a class="btn" href="https://github.com/Izecrypt">read the code</a>
+        <a class="btn" href="#contact">work together</a>
+      </div>
+      <p class="who">running now: <a href="https://opsroom.trenchesnetwork.xyz">3-agent ops room ↗</a> · live on robinhood chain: <a href="https://www.getfamily.fun">familydotfun ↗</a></p>
+    </div>
+    <div class="card-r" role="img" aria-label="kernel speedup rose from 0.22x to 1.31x">
+      <div class="cap"><span>open kernel challenge · meta × paradigm</span><span>h200 / muse spark</span></div>
+      <div class="big">0.22x<span> → </span>1.31x</div>
+      <p>kernel speedup over 21 measured iterations. public leaderboard, handle <code>Izecrypt</code>. every failed iteration is logged with its reason.</p>
+      <div class="bars" aria-hidden="true">
+        <div><span>start</span><i style="width:17%"></i><span>0.22x</span></div>
+        <div><span>baseline</span><i style="width:76%;opacity:.35"></i><span>1.00x</span></div>
+        <div class="win"><span>final</span><i style="width:100%"></i><span>1.31x</span></div>
+      </div>
+    </div>
   </div>
+  <div class="stats">
+    <a href="https://openkernelchallenge.dev"><b>21</b><span>measured iterations, failures logged</span></a>
+    <a href="https://github.com/Izecrypt/signbridge"><b>9 days</b><span>to build signbridge for the meta hackathon</span></a>
+    <a href="#writing"><b>3-part</b><span>series explaining gpu memory to non-engineers</span></a>
+    <a href="#reference"><b>8</b><span>builds with public code or a demo</span></a>
+  </div>
+</section>
+
+<div class="shell">
+<nav class="side" id="side" aria-label="documentation">
+  <h4>start</h4>
+  <a href="#overview">overview</a>
+  <a href="#verify">verify in 3 steps</a>
+  <h4>concepts</h4>
+  <a href="#protocol">the protocol layer</a>
+  <a href="#for-agents">for agents</a>
+  <a href="#status">status vocabulary</a>
+  <h4>reference</h4>
+  <a href="#reference">projects</a>
+  <a href="#products">products</a>
+  <h4>guides</h4>
+  <a href="#writing">writing</a>
+  <a href="#troubleshooting">failure log</a>
+  <h4>project</h4>
+  <a href="#changelog">changelog</a>
+  <a href="#contact">contact</a>
 </nav>
 
-<main id="top">
+<main id="content">
 
-<section class="hero" data-entry="entry 00">
-  <div class="status" aria-live="polite"><i aria-hidden="true"></i><span id="status">currently: 3 hackathon submissions in judging</span></div>
-  <h1>tobi david obembe</h1>
-  <p class="pos">builder · founder — abuja, running an agent fleet</p>
+<section id="overview">
+  <div class="crumb">docs / overview</div>
+  <h2 style="border:0;padding-top:0;margin-top:0">how this site works</h2>
+  <p class="lede">organised the way i'd document a product: a quickstart, concepts, a reference, and an honest failure log.</p>
 
-  <div class="num">
-    <strong>0.22x<span> → </span>1.31x</strong>
-    <p>kernel speedup on muse spark across 21 measured iterations. public leaderboard, so you can check it yourself.</p>
-  </div>
+  <div class="note"><b>one rule</b><p>every claim on this site links to something you can check. if a claim has no link, treat it as a bug and tell me.</p></div>
 
-  <div class="first">
-    <h2>short on time? check these three</h2>
-    <ul>
-      <li><b>the result</b><span>public leaderboard for the kernel challenge, handle Izecrypt</span><a href="https://openkernelchallenge.dev">openkernelchallenge.dev</a></li>
-      <li><b>a live product</b><span>3-agent ops room, running now</span><a href="https://opsroom.trenchesnetwork.xyz">opsroom.trenchesnetwork.xyz</a></li>
-      <li><b>the code</b><span>agentpay, open source under mit</span><a href="https://github.com/Izecrypt/agentpay">github.com/izcrypt/agentpay</a></li>
-    </ul>
-  </div>
-
-  <div class="links">
-    <a href="#proof">see the proof</a>
-    <a href="https://x.com/its_izecube">x: @its_izecube</a>
-    <a href="https://github.com/Izecrypt">github: izcrypt</a>
-    <a href="https://www.linkedin.com/in/its-izecube-85a768344/">linkedin</a>
-    <a href="mailto:tobiobembeofficial@gmail.com">contact</a>
-  </div>
+  <div class="tw"><table>
+    <thead><tr><th>what you want</th><th>go to</th></tr></thead>
+    <tbody>
+      <tr><td>confirm the work is real, fast</td><td><a href="#verify">verify in 3 steps</a></td></tr>
+      <tr><td>see how i write docs for agents</td><td><a href="#for-agents">for agents</a> · <a href="#protocol">the protocol layer</a></td></tr>
+      <tr><td>look up a specific project</td><td><a href="#reference">project reference</a> (use the filter, top right)</td></tr>
+      <tr><td>read my writing</td><td><a href="#writing">writing</a></td></tr>
+      <tr><td>see what went wrong, and what i did about it</td><td><a href="#troubleshooting">failure log</a></td></tr>
+    </tbody>
+  </table></div>
 </section>
 
-<section class="proof" id="proof" data-entry="entry 01">
-  <h2>proof / open kernel challenge</h2>
-  <p>kernloop is my gpu kernel pipeline from the open kernel challenge (meta x paradigm). it starts slower than the baseline and ends 1.31x faster, and every step in between was measured and logged.</p>
-  <div class="tw">
-    <table>
-      <thead><tr><th>what</th><th>value</th><th>check it</th></tr></thead>
-      <tbody>
-        <tr><td data-label="what">starting point</td><td data-label="value">0.22x</td><td data-label="check it"><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
-        <tr><td data-label="what">final result</td><td data-label="value">1.31x</td><td data-label="check it"><a href="https://openkernelchallenge.dev">leaderboard</a></td></tr>
-        <tr><td data-label="what">measured iterations</td><td data-label="value">21</td><td data-label="check it"><a href="https://x.com/its_izecube">build log on x</a></td></tr>
-        <tr><td data-label="what">target hardware / model</td><td data-label="value">h200 / muse spark</td><td data-label="check it"><a href="https://openkernelchallenge.dev">the challenge</a></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="muted">between iteration 1 and 21 the pipeline went from failing compiles to sourcing every step by measured price and latency. promoted iterations landed 22% to 40% mean improvements; every failed iteration is logged with its reason. the failed rows are the point: the record is honest, not curated.</p>
+<section id="verify">
+  <h2>verify in 3 steps <a class="a" href="#verify" aria-label="link to this section">#</a></h2>
+  <p>a five minute path from "who is this" to "this is real". each step lists what you need, what you should see, and what to do if it doesn't work.</p>
+
+  <h3>prerequisites</h3>
+  <ul>
+    <li>a browser</li>
+    <li>optional: <code>git</code> and the <code>gh</code> cli, for step 3</li>
+  </ul>
+
+  <ol class="steps">
+    <li>
+      <h3>check the measured result</h3>
+      <p>open the public leaderboard for the open kernel challenge (meta × paradigm) and find the handle <code>Izecrypt</code>.</p>
+      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">open</span> https://openkernelchallenge.dev</pre></div>
+      <p class="expect"><b>expect</b>a kernel speedup of 1.31x on muse spark (h200), reached from a 0.22x start across 21 measured iterations.</p>
+      <p class="fail"><b>if it fails</b>if the leaderboard is unreachable, the iteration-by-iteration log is in the build thread on <a href="https://x.com/its_izecube">x</a>.</p>
+    </li>
+    <li>
+      <h3>use a live product</h3>
+      <p>open the 3-agent ops room. it is the system that runs the daily standup for the rest of the fleet.</p>
+      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">open</span> https://opsroom.trenchesnetwork.xyz</pre></div>
+      <p class="expect"><b>expect</b>a running ops room, not a mock-up. source: <a href="https://github.com/Izecrypt/switch-ops-room">switch-ops-room</a>.</p>
+      <p class="fail"><b>if it fails</b>it is a self-hosted service, so it can be down. check the <a href="#changelog">changelog</a> for recent changes, then message me on x.</p>
+    </li>
+    <li>
+      <h3>read the code</h3>
+      <p>clone the open-source repo. <code>agentpay</code> is mit licensed per-step payments for llm calls, with budgets and receipts.</p>
+      <div class="code"><div class="bar"><span>shell</span><button type="button">copy</button></div><pre><span class="k">gh</span> repo clone Izecrypt/agentpay
+<span class="c"># no gh? use git:</span>
+<span class="k">git</span> clone https://github.com/Izecrypt/agentpay.git</pre></div>
+      <p class="expect"><b>expect</b>a public repository you can read without asking anyone.</p>
+      <p class="fail"><b>if it fails</b>confirm the handle is <code>Izecrypt</code> (capital i). see the <a href="#reference">reference</a> for every other repo.</p>
+    </li>
+  </ol>
 </section>
 
-<section id="builds" data-entry="entry 02">
-  <h2>builds</h2>
-  <div class="grid" id="grid"></div>
-
-  <p class="sub-h">products and businesses (ongoing, not experiments)</p>
-  <ul class="biz" id="biz"></ul>
-</section>
-
-<section id="writing" data-entry="entry 03">
-  <h2>writing</h2>
-  <ul class="posts">
-    <li><span>gpu-brain, part 1: your brain is a gpu and you are running it wrong</span><a class="mono" href="https://x.com/its_izecube/status/2120063711922524354">x post</a></li>
-    <li><span>gpu-brain, part 2: your memory is stored in the wrong layout</span><a class="mono" href="https://x.com/its_izecube/status/2120778621946118504">x post</a></li>
-    <li><span>gpu-brain, part 3: the moving truck and the unpacking crew</span><a class="mono" href="https://x.com/its_izecube/status/2121269845626945729">x post</a></li>
-    <li><span>open agent hackathon 2026, official certificate (verifiable)</span><a class="mono" href="https://hackathon.genai.works/verify/CERT-2026-AEDRD">verify</a></li>
-    <li><span>build-in-public, everything else</span><a class="mono" href="https://x.com/its_izecube">@its_izecube</a></li>
+<section id="protocol">
+  <h2>the protocol layer <a class="a" href="#protocol" aria-label="link to this section">#</a></h2>
+  <p>an agent is only as good as the documentation it reads. i run a fleet of agents that build, ship and operate products, so i write docs for a reader that executes them literally.</p>
+  <p>the fleet's shared memory is a markdown vault with a written protocol: how to retrieve, who owns which note, when a new note is allowed to exist, and how to reconcile conflicting facts. every repo carries an <code>AGENTS.md</code> that agents read before touching code.</p>
+  <h3>what that taught me about documentation</h3>
+  <ul>
+    <li><b>prerequisites must be explicit.</b> an agent will not guess what you assumed.</li>
+    <li><b>ambiguity is a failure mode, not a style issue.</b> it shows up as a wrong action, not a confused reader.</li>
+    <li><b>recovery guidance is part of the doc.</b> if a step can fail, the next step has to say what to do.</li>
+    <li><b>one owner per fact.</b> update the note that owns the fact instead of writing a second copy.</li>
+    <li><b>write the failure down.</b> the next agent, or person, repeats it otherwise.</li>
   </ul>
 </section>
 
-<section id="shipped" data-entry="entry 04">
-  <h2>shipped recently</h2>
+<section id="for-agents">
+  <h2>for agents <a class="a" href="#for-agents" aria-label="link to this section">#</a></h2>
+  <p>this page is plain, server-rendered html: no client-side rendering is needed to read any claim, and the project reference is static markup, not injected by script. there is also a machine-readable summary at <a href="/llms.txt"><code>/llms.txt</code></a> and <code>ProfilePage</code> json-ld in the page head.</p>
+  <h3>page contract</h3>
+  <div class="code"><div class="bar"><span>AGENTS.md</span><button type="button">copy</button></div><pre><span class="k"># izecube.trenchesnetwork.xyz</span>
+
+<span class="c">## read first</span>
+- one page, static html. no login, no javascript required.
+- /llms.txt is the short version of this page.
+
+<span class="c">## claims</span>
+- every claim links to a checkable source.
+- if a claim has no link, do not repeat it as fact.
+- status words are defined in #status. use them exactly.
+
+<span class="c">## do not</span>
+- do not infer ownership, revenue or traction that the page does not state.
+- do not treat "parked", "private" or "design" items as public products.
+
+<span class="c">## contact</span>
+- x: @its_izecube (fastest). email is in #contact.</pre></div>
+  <div class="note"><b>honest scope</b><p>this contract is a demonstration of the format, written for this page. it is not a claim that any agent has been evaluated against it.</p></div>
+</section>
+
+<section id="status">
+  <h2>status vocabulary <a class="a" href="#status" aria-label="link to this section">#</a></h2>
+  <p>status words are used consistently across the reference.</p>
+  <div class="tw"><table>
+    <thead><tr><th>status</th><th>meaning</th></tr></thead>
+    <tbody>
+      <tr><td><span class="b live">live</span></td><td>running now and reachable, or deployed on a public network.</td></tr>
+      <tr><td><span class="b sub">submitted</span></td><td>entered in a hackathon. results are the judges' to give.</td></tr>
+      <tr><td><span class="b demo">demo</span></td><td>built for a demo and shown on video. not a maintained product.</td></tr>
+      <tr><td><span class="b oss">open source</span></td><td>code is public under the stated license.</td></tr>
+      <tr><td><span class="b park">parked · private · design · forming</span></td><td>not a public product. may be paused, invite-only, or still on paper.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="reference">
+  <h2>project reference <a class="a" href="#reference" aria-label="link to this section">#</a></h2>
+  <p>builds with code or a demo you can open. each entry lists its status, a one-line purpose, and where to verify it.</p>
+  <div class="refs" id="refs">
+<article class="ref" id="ref-nearagentpay" data-q="nearagentpay agents that pay per step on chain: every ai step is priced, routed and settled on near testnet over x402-style intents.">
+<header><h3><code>nearagentpay</code></h3><span class="b sub">submitted</span></header>
+<p>agents that pay per step on chain: every ai step is priced, routed and settled on near testnet over x402-style intents.</p>
+<dl><dt>note</dt><dd>results nov 18</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/nearagentpay">repo</a> · <a href="https://agentpay.trenchesnetwork.xyz">demo</a></dd></dl></article><article class="ref" id="ref-switch-ops-room" data-q="switch-ops-room a 3-agent ops room that runs a daily standup like teammates: triage, verification-first receipts, approval-gated content.">
+<header><h3><code>switch-ops-room</code></h3><span class="b live">live</span></header>
+<p>a 3-agent ops room that runs a daily standup like teammates: triage, verification-first receipts, approval-gated content.</p>
+<dl><dt>note</dt><dd>opsroom.trenchesnetwork.xyz</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/switch-ops-room">repo</a> · <a href="https://opsroom.trenchesnetwork.xyz">demo</a></dd></dl></article><article class="ref" id="ref-signbridge" data-q="signbridge two-way sign language translator built in 9 days for the meta hackathon.">
+<header><h3><code>signbridge</code></h3><span class="b demo">demo</span></header>
+<p>two-way sign language translator built in 9 days for the meta hackathon.</p>
+<dl><dt>note</dt><dd>9 day build</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/signbridge">repo</a> · <a href="https://youtu.be/eLHdIYXji7I">video</a></dd></dl></article><article class="ref" id="ref-agentpay" data-q="agentpay open-source per-step payments for llm calls, with budgets and receipts.">
+<header><h3><code>agentpay</code></h3><span class="b oss">open source</span></header>
+<p>open-source per-step payments for llm calls, with budgets and receipts.</p>
+<dl><dt>note</dt><dd>mit license</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/agentpay">repo</a></dd></dl></article><article class="ref" id="ref-routepay" data-q="routepay routing control plane for agent inference: serv reasoning plans each step&#x27;s route as cited json, with a budget envelope, circuit breaker and shadow verification.">
+<header><h3><code>routepay</code></h3><span class="b sub">submitted</span></header>
+<p>routing control plane for agent inference: serv reasoning plans each step&#x27;s route as cited json, with a budget envelope, circuit breaker and shadow verification.</p>
+<dl><dt>note</dt><dd>serv hackathon 02</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/routepay-serv">repo</a> · <a href="https://x.com/its_izecube/status/2122013210068857184">x</a></dd></dl></article><article class="ref" id="ref-receipt-vault" data-q="receipt-vault whatsapp-first receipt vault for small importers: snap, dedupe, flag anomalies, export audit-ready books. shipped as an agent skill.">
+<header><h3><code>receipt-vault</code></h3><span class="b sub">submitted</span></header>
+<p>whatsapp-first receipt vault for small importers: snap, dedupe, flag anomalies, export audit-ready books. shipped as an agent skill.</p>
+<dl><dt>note</dt><dd>ugreen ai nas hackathon</dd><dt>verify</dt><dd><a href="https://github.com/Izecrypt/receipt-vault">repo</a></dd></dl></article><article class="ref" id="ref-familydotfun" data-q="familydotfun a socio-economic platform for token communities: social, ownership and economic layers in one place. co-built, live on robinhood chain mainnet.">
+<header><h3><code>familydotfun</code></h3><span class="b live">live</span></header>
+<p>a socio-economic platform for token communities: social, ownership and economic layers in one place. co-built, live on robinhood chain mainnet.</p>
+<dl><dt>note</dt><dd>mainnet since aug 2026</dd><dt>verify</dt><dd><a href="https://www.getfamily.fun">platform</a> · <a href="https://x.com/familydotfun">x</a></dd></dl></article><article class="ref" id="ref-kernloop" data-q="kernloop the open kernel challenge pipeline. see the verification guide above.">
+<header><h3><code>kernloop</code></h3><span class="b live">public</span></header>
+<p>the open kernel challenge pipeline. see the verification guide above.</p>
+<dl><dt>note</dt><dd>0.22x → 1.31x</dd><dt>verify</dt><dd><a href="https://openkernelchallenge.dev">leaderboard</a></dd></dl></article>
+  </div>
+  <p class="empty" id="none" hidden>no projects match that filter.</p>
+</section>
+
+<section id="products">
+  <h2>products and businesses <a class="a" href="#products" aria-label="link to this section">#</a></h2>
+  <p>ongoing ventures, not experiments. read the status column before assuming anything is public.</p>
+  <div class="tw"><table id="biz">
+    <thead><tr><th>name</th><th>what it is</th><th>status</th></tr></thead>
+    <tbody>
+<tr data-q="hoolie group buying for nigeria: people who want the same everyday product buy together for a better group price. hoolie.ng coming."><td><code>hoolie</code></td><td>group buying for nigeria: people who want the same everyday product buy together for a better group price. hoolie.ng coming.</td><td><span class="b park">building</span></td></tr><tr data-q="marketcube a premium growth practice for irl businesses: ads, funnels and sales systems."><td><code>marketcube</code></td><td>a premium growth practice for irl businesses: ads, funnels and sales systems.</td><td><span class="b park">pre-launch</span></td></tr><tr data-q="web3life a spatial web3 life simulator: anonymous players build wealth, reputation, relationships and businesses inside a fictional crypto ecosystem."><td><code>web3life</code></td><td>a spatial web3 life simulator: anonymous players build wealth, reputation, relationships and businesses inside a fictional crypto ecosystem.</td><td><span class="b live">live</span></td></tr><tr data-q="reply assistant an x reply assistant in your tone: follows trends and priority accounts, drafts replies, daily digest on telegram."><td><code>reply assistant</code></td><td>an x reply assistant in your tone: follows trends and priority accounts, drafts replies, daily digest on telegram.</td><td><span class="b live">live</span></td></tr><tr data-q="oddladder a sportybet ticket pipeline plus a subscriber mini app on trenches. private alpha, no public signup."><td><code>oddladder</code></td><td>a sportybet ticket pipeline plus a subscriber mini app on trenches. private alpha, no public signup.</td><td><span class="b park">private</span></td></tr><tr data-q="trends put cash on a trend, a short story or joke, and ride a ticket: raise, live, list, with cash-in and cash-out."><td><code>trends</code></td><td>put cash on a trend, a short story or joke, and ride a ticket: raise, live, list, with cash-in and cash-out.</td><td><span class="b live">live</span></td></tr><tr data-q="ansembot telegram price bot for the ansem memecoin ecosystem."><td><code>ansembot</code></td><td>telegram price bot for the ansem memecoin ecosystem.</td><td><span class="b park">parked</span></td></tr><tr data-q="ats autonomous trading system for solana memecoins. architecture phase."><td><code>ats</code></td><td>autonomous trading system for solana memecoins. architecture phase.</td><td><span class="b park">design</span></td></tr><tr data-q="ensei trend capital agent: community-voted memecoin launches with automated bags and social rewards for promoters."><td><code>ensei</code></td><td>trend capital agent: community-voted memecoin launches with automated bags and social rewards for promoters.</td><td><span class="b park">parked</span></td></tr><tr data-q="believe believe trust, the holding company being formed behind the portfolio."><td><code>believe</code></td><td>believe trust, the holding company being formed behind the portfolio.</td><td><span class="b park">forming</span></td></tr><tr data-q="trenches a social platform with crypto built in: communities, points, sprays, squads and trading, all in one place. production at trenchesnetwork.xyz."><td><code>trenches</code></td><td>a social platform with crypto built in: communities, points, sprays, squads and trading, all in one place. production at trenchesnetwork.xyz.</td><td><span class="b live">live</span></td></tr><tr data-q="ize capitals a public money desk: market calls timestamped on a scoreboard and graded in public. first call is live at x.com/its_izecube/status/2122257100126478438 with receipts."><td><code>ize capitals</code></td><td>a public money desk: market calls timestamped on a scoreboard and graded in public. first call is live at x.com/its_izecube/status/2122257100126478438 with receipts.</td><td><span class="b live">live</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="writing">
+  <h2>writing <a class="a" href="#writing" aria-label="link to this section">#</a></h2>
+  <h3>gpu-brain: ai hardware through the human brain</h3>
+  <p>a three-part public series that explains gpu memory and compute for a non-engineer audience. read in order.</p>
+  <ol>
+    <li><a href="https://x.com/its_izecube/status/2120063711922524354">part 1: your brain is a gpu and you are running it wrong</a></li>
+    <li><a href="https://x.com/its_izecube/status/2120778621946118504">part 2: your memory is stored in the wrong layout</a></li>
+    <li><a href="https://x.com/its_izecube/status/2121269845626945729">part 3: the moving truck and the unpacking crew</a></li>
+  </ol>
+  <h3>elsewhere</h3>
+  <ul>
+    <li><a href="https://hackathon.genai.works/verify/CERT-2026-AEDRD">open agent hackathon 2026: official certificate</a> (verifiable)</li>
+    <li><a href="https://x.com/its_izecube">build in public, everything else: @its_izecube</a></li>
+  </ul>
+</section>
+
+<section id="troubleshooting">
+  <h2>failure log <a class="a" href="#troubleshooting" aria-label="link to this section">#</a></h2>
+  <p>docs that only describe the happy path are wrong. here is what didn't work, kept on the record.</p>
+  <div class="tw"><table>
+    <thead><tr><th>symptom</th><th>what happened</th><th>resolution</th></tr></thead>
+    <tbody>
+      <tr><td>kernloop started slower than baseline</td><td>the pipeline began at 0.22x and early iterations failed to compile.</td><td>21 measured iterations. promoted iterations landed 22% to 40% mean improvements; every failed iteration is logged with its reason. final: 1.31x.</td></tr>
+      <tr><td>signbridge misreads signs</td><td>the demo video states 65 unclear reads across 67 model calls.</td><td>reported in the submission instead of cut from the demo. accuracy over polish.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn"><b>policy</b><p>failed rows stay in. the record is honest, not curated.</p></div>
+</section>
+
+<section id="changelog">
+  <h2>changelog <a class="a" href="#changelog" aria-label="link to this section">#</a></h2>
   <ul class="feed">
     <li><time>nov 13</time><span>gpu-brain part 3 published. the trilogy is complete.</span></li>
     <li><time>nov 13</time><span>nearagentpay demo live at agentpay.trenchesnetwork.xyz</span></li>
@@ -205,63 +452,64 @@ footer{padding:3rem 0 4rem 2.5rem;font:.78rem var(--mono);color:var(--muted)}
     <li><time>nov 8</time><span>near hackathon submitted, agents economy track</span></li>
     <li><time>nov 4</time><span>signbridge submitted to the meta global ai developer hackathon</span></li>
   </ul>
-  <p class="mono muted">an agent writes this list from the vault. it updates as things ship.</p>
+  <p>an agent writes this list from the vault and updates it as things ship.</p>
 </section>
 
-<section class="about" id="about" data-entry="entry 05">
-  <h2>about</h2>
-  <p>i'm tobi, a builder and founder in abuja. i started in crypto, went looking for better tools, and the tools became the products. today i run a fleet of ai agents that ships software, enters hackathons and keeps this page current.</p>
-  <p>right now i'm building hoolie (group buying for nigeria), running an agent-operated product portfolio, and writing gpu-brain, a public series that teaches ai hardware through the human brain.</p>
-  <p>if you landed here from an application or a hackathon: everything on this page links to something you can check. if you want to work together, the fastest route is a dm on x or the email below.</p>
-  <div class="links">
-    <a href="https://x.com/its_izecube">x: @its_izecube</a>
-    <a href="https://github.com/Izecrypt">github: izcrypt</a>
-    <a href="https://www.linkedin.com/in/its-izecube-85a768344/">linkedin</a>
-    <a href="mailto:tobiobembeofficial@gmail.com">tobiobembeofficial@gmail.com</a>
-  </div>
+<section id="contact">
+  <h2>contact <a class="a" href="#contact" aria-label="link to this section">#</a></h2>
+  <p>fastest route is a dm on x. i work async.</p>
+  <ul>
+    <li>x: <a href="https://x.com/its_izecube">@its_izecube</a></li>
+    <li>github: <a href="https://github.com/Izecrypt">Izecrypt</a></li>
+    <li>linkedin: <a href="https://www.linkedin.com/in/its-izecube-85a768344/">its-izecube</a></li>
+    <li>email: <a href="mailto:tobiobembeofficial@gmail.com">tobiobembeofficial@gmail.com</a></li>
+  </ul>
+  <div class="pager"><a href="#overview">↑ back to overview</a><a href="/llms.txt">/llms.txt</a></div>
+  <footer>© 2026 tobi david obembe · static page, no trackers</footer>
 </section>
 
-<footer>© 2026 tobi david obembe · static page, no trackers</footer>
 </main>
 
-<script>
-const builds=[
- {n:"nearagentpay",d:"agents that pay per step on chain: every ai step is priced, routed and settled on near testnet over x402-style intents.",c:"sub",s:"submitted",k:"results nov 18",l:[["repo","https://github.com/Izecrypt/nearagentpay"],["demo","https://agentpay.trenchesnetwork.xyz"]]},
- {n:"switch-ops-room",d:"a 3-agent ops room that runs a daily standup like teammates: triage, verification-first receipts, approval-gated content.",c:"live",s:"live",k:"opsroom.trenchesnetwork.xyz",l:[["repo","https://github.com/Izecrypt/switch-ops-room"],["demo","https://opsroom.trenchesnetwork.xyz"]]},
- {n:"signbridge",d:"two-way sign language translator built in 9 days for the meta hackathon.",c:"demo",s:"demo",k:"9 day build",l:[["repo","https://github.com/Izecrypt/signbridge"],["video","https://youtu.be/eLHdIYXji7I"]]},
- {n:"agentpay",d:"open-source per-step payments for llm calls, with budgets and receipts.",c:"oss",s:"open source",k:"mit license",l:[["repo","https://github.com/Izecrypt/agentpay"]]},
- {n:"routepay",d:"routing control plane for agent inference: serv reasoning plans each step's route as cited json, with a budget envelope, circuit breaker and shadow verification.",c:"sub",s:"submitted",k:"serv hackathon 02",l:[["repo","https://github.com/Izecrypt/routepay-serv"],["x","https://x.com/its_izecube/status/2122013210068857184"]]},
- {n:"receipt-vault",d:"whatsapp-first receipt vault for small importers: snap, dedupe, flag anomalies, export audit-ready books. shipped as an agent skill.",c:"sub",s:"submitted",k:"ugreen ai nas hackathon",l:[["repo","https://github.com/Izecrypt/receipt-vault"]]},
- {n:"familydotfun",d:"a socio-economic platform for token communities: social, ownership and economic layers in one place. co-built, live on robinhood chain mainnet.",c:"live",s:"live",k:"mainnet since aug 2026",l:[["platform","https://www.getfamily.fun"],["x","https://x.com/familydotfun"]]},
- {n:"kernloop",d:"the open kernel challenge pipeline. the proof is the section above.",c:"live",s:"public",k:"0.22x → 1.31x",l:[["leaderboard","https://openkernelchallenge.dev"]]}
-];
-const biz=[
- ["hoolie","group buying for nigeria: people who want the same everyday product buy together for a better group price. hoolie.ng coming.","park","building"],
- ["marketcube","a premium growth practice for irl businesses: ads, funnels and sales systems.","park","pre-launch"],
- ["web3life","a spatial web3 life simulator: anonymous players build wealth, reputation, relationships and businesses inside a fictional crypto ecosystem.","live","live"],
- ["reply assistant","an x reply assistant in your tone: follows trends and priority accounts, drafts replies, daily digest on telegram.","live","live"],
- ["oddladder","a sportybet ticket pipeline plus a subscriber mini app on trenches. private alpha, no public signup.","park","private"],
- ["trends","put cash on a trend, a short story or joke, and ride a ticket: raise, live, list, with cash-in and cash-out.","live","live"],
- ["ansembot","telegram price bot for the ansem memecoin ecosystem.","park","parked"],
- ["ats","autonomous trading system for solana memecoins. architecture phase.","park","design"],
- ["ensei","trend capital agent: community-voted memecoin launches with automated bags and social rewards for promoters.","park","parked"],
- ["believe","believe trust, the holding company being formed behind the portfolio.","park","forming"],
- ["trenches","a social platform with crypto built in: communities, points, sprays, squads and trading, all in one place. production at trenchesnetwork.xyz.","live","live"],
- ["ize capitals","a public money desk: market calls timestamped on a scoreboard and graded in public. first call (the leverage flush flag) is live at x.com/its_izecube/status/2122257100126478438 with receipts.","live","live"]
-];
-document.getElementById("grid").innerHTML=builds.map(b=>`
- <article class="card"><div class="row"><h3>${b.n}</h3><span class="b ${b.c}">${b.s}</span></div>
- <p>${b.d}</p><div class="k">${b.k}</div>
- ${b.l.length?`<div class="l">${b.l.map(([t,h])=>`<a href="${h}">${t}</a>`).join("")}</div>`:""}</article>`).join("");
-document.getElementById("biz").innerHTML=biz.map(([n,d,c,s])=>`
- <li><b>${n}</b><span>${d}</span><span class="b ${c}">${s}</span></li>`).join("");
+<aside class="toc" aria-label="on this page"><h4>on this page</h4><div id="toc"></div></aside>
+</div>
 
-// one quiet moment: the status line rotates every 5s
-const lines=["currently: 3 hackathon submissions in judging","currently: near results nov 18","currently: gpu-brain trilogy complete"];
-const el=document.getElementById("status");let i=0;
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
-  setInterval(()=>{i=(i+1)%lines.length;el.textContent=lines[i]},5000);
+<script>
+// copy buttons
+document.querySelectorAll(".code button").forEach(b=>b.addEventListener("click",async()=>{
+  const t=b.closest(".code").querySelector("pre").innerText;
+  try{await navigator.clipboard.writeText(t);b.textContent="copied"}catch(e){b.textContent="select + copy"}
+  setTimeout(()=>b.textContent="copy",1600);
+}));
+// mobile menu
+const side=document.getElementById("side"),menu=document.getElementById("menu");
+menu.addEventListener("click",()=>{const o=side.classList.toggle("open");menu.setAttribute("aria-expanded",o)});
+side.addEventListener("click",e=>{if(e.target.tagName==="A"){side.classList.remove("open");menu.setAttribute("aria-expanded",false)}});
+// in-page toc from h3s of the section in view + scroll spy
+const secs=[...document.querySelectorAll("main section")];
+const links=[...side.querySelectorAll("a")];
+const toc=document.getElementById("toc");
+function buildToc(sec){
+  toc.innerHTML="";
+  sec.querySelectorAll("h2,h3").forEach((h,i)=>{
+    if(h.closest(".ref")||h.closest(".steps"))return;
+    if(!h.id)h.id=sec.id+"-h"+i;
+    const a=document.createElement("a");a.href="#"+h.id;a.textContent=h.textContent.replace(/#$/,"").trim();toc.appendChild(a);
+  });
 }
+let cur=null;
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting&&e.target!==cur){cur=e.target;
+    links.forEach(l=>l.classList.toggle("on",l.getAttribute("href")==="#"+cur.id));buildToc(cur)}});
+},{rootMargin:"-20% 0px -70% 0px"});
+secs.forEach(s=>io.observe(s));buildToc(secs[0]);
+// filter projects
+const q=document.getElementById("q"),none=document.getElementById("none");
+q.addEventListener("input",()=>{
+  const v=q.value.trim().toLowerCase();let n=0;
+  document.querySelectorAll("[data-q]").forEach(el=>{const m=!v||el.dataset.q.toLowerCase().includes(v);el.hidden=!m;if(m&&el.classList.contains("ref"))n++});
+  none.hidden=n>0||!v;
+  if(v)document.getElementById("reference").scrollIntoView();
+});
 </script>
 </body>
 </html>
